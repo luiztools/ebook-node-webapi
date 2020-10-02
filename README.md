@@ -9,3 +9,7 @@ Todos os fontes do livro, organizados em arquivos por capítulo e sub-organizado
 ## workshop
 Projeto de aplicação web usando Node.js.
 
+Conheça meus cursos online em https://www.luiztools.com.br/meus-cursos
+
+Me siga nas redes sociais: https://about.me/luiztools
+
