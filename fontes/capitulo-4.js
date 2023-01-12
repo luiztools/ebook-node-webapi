@@ -14,9 +14,9 @@ app.use('/customers', customersRouter);
 const {MongoClient} = require("mongodb");
 async function connect(){
     if(global.db) return global.db;
-    const conn = await MongoClient.connect("mongodb://localhost:27017/", { useUnifiedTopology: true });
-    if(!conn) return new Error("Can't connect");
-    global.db = await conn.db("workshop");
+    const client = new MongoClient("mongodb://127.0.0.1:27017/");
+    await client.connect();
+    global.db = client.db("workshop");
     return global.db;
   }
 
@@ -74,11 +74,11 @@ router.post('/', async function(req, res, next){
 })
 
 //4.10
-router.put('/:id', async function(req, res, next){
+router.patch('/:id', async function(req, res, next){
     try{
       const customer = req.body;
       const db = await connect();
-      res.json(await db.collection("customers").update({_id: new ObjectId(req.params.id)}, customer));
+      res.json(await db.collection("customers").updateOne({_id: new ObjectId(req.params.id)}, {$set: customer }));
     }
     catch(ex){
       console.log(ex);

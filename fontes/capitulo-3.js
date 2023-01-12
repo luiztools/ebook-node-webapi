@@ -2,7 +2,7 @@
 mongod --dbpath C:\mongo\data
 
 //3.2
-mongo
+mongosh
 
 //3.3
 show databases
@@ -17,13 +17,13 @@ show collections
 db.customers.find()
 
 //3.7
-db.customers.insert({ nome: "Luiz", idade: 32 })
+db.customers.insertOne({ nome: "Luiz", idade: 32 })
 
 //3.8
 db.customers.find({uf: "RS"})
 
 //3.9
-db.customers.update({nome: "Luiz"}, {nome: "Luiz", idade: 32, uf: "RS"})
+db.customers.updateOne({nome: "Luiz"}, {nome: "Luiz", idade: 32, uf: "RS"})
 
 //3.10
 db.customers.deleteOne({nome: "Luiz"})
