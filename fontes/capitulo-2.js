@@ -24,7 +24,7 @@ console.log('Hello World');
 npm install -g express-generator
 
 //2.9
-express -e --git workshop
+express workshop
 
 //2.10
 cd workshop
@@ -62,9 +62,8 @@ var app = express();
 
 //2.15
 // view engine setup
-app.engine('html', require('ejs').renderFile);
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -105,22 +104,5 @@ res.render('index', { title: 'Express' });
 
 //2.20
 // view engine setup
-app.engine('html', require('ejs').renderFile);
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
-
-//2.21
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
-
-//2.22
-res.render('index', { title: 'Express' });
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');

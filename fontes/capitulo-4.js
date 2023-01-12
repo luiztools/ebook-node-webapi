@@ -74,7 +74,7 @@ router.post('/', async function(req, res, next){
 })
 
 //4.10
-router.patch('/:id', async function(req, res, next){
+router.put('/:id', async function(req, res, next){
     try{
       const customer = req.body;
       const db = await connect();
