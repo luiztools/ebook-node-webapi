@@ -17,13 +17,13 @@ show collections
 db.customers.find()
 
 //3.7
-db.customers.insertOne({ nome: "Luiz", idade: 32 })
+db.customers.insertOne({ nome: "Luiz", idade: 35 })
 
 //3.8
 db.customers.find({uf: "RS"})
 
 //3.9
-db.customers.updateOne({nome: "Luiz"}, {nome: "Luiz", idade: 32, uf: "RS"})
+db.customers.updateOne({nome: "Luiz"}, {nome: "Luiz", idade: 35, uf: "RS"})
 
 //3.10
 db.customers.deleteOne({nome: "Luiz"})
